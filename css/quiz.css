@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "VW_fett";
+  src: url(../fonts/VWHe000.ttf);
+}
+
+@font-face {
+  font-family: "VW_thin";
+  src: url(../fonts/VWHead_Regular.otf);
+}
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: 'Poppins, sans-serif';
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 12.5%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  
+}
+
+a {
+  font-family: 'VW_thin';
+}
+
+body {
+  background: #070f3a;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 16px;
+  color: #e4e4e4;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 30px;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e4e4e4;
+  border-radius: 5px;
+  transform: translateY(30px);
+  transition: .5s;
+  opacity: 0.1%;
+}
+
+.navbar a:hover::after {
+  transform: translateY(20px);
+  opacity: 100;
+
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background: url(/bilder/Herunterladen.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  width: 75%; /* skalierung des bildes */
+  height: 550px;
+  margin: 20px auto;
+  background: url(/bilder/volkswagen-id7-front-right.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0px;
+  margin-left: 150px;
+  backdrop-filter: blur(12px);
+  filter: blur(7px);
+}
+
+.content,
+.logreg-box {
+  height: 100%;
+  filter: blur(10px);
+}
+
+.content {
+  width: 58%;
+  float: left;
+  background: transparent;
+  padding:50px;
+  color: #FFF;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  filter: blur(10px);
+  backdrop-filter: blur(12px);
+}
+
+.logreg-box {
+  width: 42%;
+  margin-right: 0;
+  background: transparent;
+}
+
+.vw-logo-white {
+  width: 20%;
+  /* padding-left: 10px;
+  padding-top: 10px; */
+  transition: .5s ease;
+  margin-top: none;
+}
+
+.vw-logo-white:hover {
+  transform: scale(1.3);
+}
+
+.title {
+  font-family: 'VW_thin';
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 90px;
+  margin-top: 10px;
+}
+
+.title-span {
+
+  font-size: 40px;
+  font-family: 'VW_thin';
+  line-height: 1;
+  color: #FFF;
+}
+ span {
+   font-family: 'VW_thin';
+   font-size: 30px;
+ }
+
+ .links-beschreibung {
+    font-size: 16px;
+    margin: 20px 0;
+    font-family: 'VW_thin';
+    margin-top: 50px;
+ }
+
+ .social-icons a i {
+   font-size: 22px;
+   color: #FFF;
+   margin-right: 10px;
+   transition: .5s ease;
+ }
+
+ .social-icons a:hover i {
+   transform: scale(1.7);
+ }
+
+ .logreg-box,
+ .form-box {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background:transparent;
+   backdrop-filter: blur(12px);
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+
+ }
+
+ .title_right {
+   color: #FFF;
+   font-family: 'VW_thin';
+ }
+
+ .icon {
+  color: white;
+   background-color: transparent;
+ }
+
+  .nickname,
+  .email {
+    color: #FFF;
+    font-family: 'VW_thin';
+  }
+
+  .form-box h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  
+  .input-box {
+    width: 340px;
+    height: 50px;
+    border-bottom: 1.5px solid #FFF;
+    margin: 30px 0;
+    position: relative;
+  }
+
+  .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #FFF;
+    font-family: 'VW_thin';
+    font-weight: 500px;
+    padding-right: 28px;
+  }
+
+  .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .4s ease;
+  }
+
+  .input-box input:focus~label,
+  .input-box input:valid~label {
+    top: -5px;
+  }
+
+  .icon {
+    top: 13px;
+    position: absolute;
+    right: 0;
+    font-size: 25px;
+
+  }
+
+  .button {
+    width: 100%;
+    height: 45px;
+    background: #141d4e;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #FFF;
+    font-family: 'VW_thin';
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    transition: opacity 0.3s;
+  }
+
+  .button:hover {
+    opacity: 70%;
+   }
+
+  .button:active {
+    opacity: 30%;
+  }
