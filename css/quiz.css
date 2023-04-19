@@ -80,7 +80,7 @@ body {
   width: 75%; /* skalierung des bildes */
   height: 550px;
   margin: 20px auto;
-  background: url(/bilder/volkswagen-id7-front-right.png) no-repeat;
+  /* background: url(/bilder/volkswagen-id7-front-right.png) no-repeat; */
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -339,7 +339,7 @@ body {
     font-family: 'VW_thin';
     border-radius: 7px;
     cursor: pointer;
-    display: block;
+    display: none;
     transition: all 0.2s;
     border: 1.2px solid #141d4e;
   }
