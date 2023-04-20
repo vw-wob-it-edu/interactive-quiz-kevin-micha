@@ -75,7 +75,7 @@ const questions = [
   },
 
   {
-    question: "Was findest am besten beim neuen ID. 7?",
+    question: "Was findest du am besten beim neuen ID. 7?",
     answers: [
       { text: "Das neue Elektrochromdach ", correct: false},
       { text: "700 KM Reichweite mit fast 30min laden ", correct: false},
@@ -155,13 +155,13 @@ function selectAnswer (e) {
     nextButton.style.display = "block";
   }
 
-  function showScore() {
+   function showScore() {
     resetState();
     questionElement.innerHTML = `Du hast ${score} von ${questions.
     length} ID. 7 Fragen beantwortet!`;
     nextButton.innerHTML = "Nochmal versuchen";
     nextButton.style.display = "block";
-  }
+  } 
   
   
   function handleNextButton() {
@@ -173,10 +173,8 @@ function selectAnswer (e) {
     }
   }
   
-  
-  
-  nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < question.length) {
+  nextButton.addEventListener("click", () =>{
+    if (currentQuestionIndex < questions.length) {
       handleNextButton();
     } else {
       startQuiz ();
