@@ -140,10 +140,11 @@ function selectAnswer (e) {
   
   if (isCorrect === "true") {
     selectedBtn.classList.add("correct");
-    alert ("Richtige Antwort");
+    score++; //bei richtiger antwort gebe einen punkt
+   /*  alert ("Richtige Antwort"); */
   }else{
     selectedBtn.classList.add("incorrect");
-    alert("Falsche Antwort");
+    /* alert("Falsche Antwort"); */
     }
     Array.from(answerButtons.children).forEach(button => {
       if (button.dataset.correct === "true") {
@@ -154,6 +155,33 @@ function selectAnswer (e) {
     nextButton.style.display = "block";
   }
 
+  function showScore() {
+    resetState();
+    questionElement.innerHTML = `Du hast ${score} von ${questions.
+    length} ID. 7 Fragen beantwortet!`;
+    nextButton.innerHTML = "Nochmal versuchen";
+    nextButton.style.display = "block";
+  }
+  
+  
+  function handleNextButton() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion ();
+    } else {
+      showScore ();
+    }
+  }
+  
+  
+  
+  nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < question.length) {
+      handleNextButton();
+    } else {
+      startQuiz ();
+    }
+  });
 
 
 startQuiz();

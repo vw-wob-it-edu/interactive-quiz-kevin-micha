@@ -312,10 +312,13 @@ body {
     transition: all 0.3s;
   }
 
-  .btn:hover {
+  .btn:hover:not([disabled]) {
     background: #141d4e;
     color: #e4e4e4;
+  }
 
+  .btn:disabled {
+    cursor: no-drop;
   }
 
   .quiz {
