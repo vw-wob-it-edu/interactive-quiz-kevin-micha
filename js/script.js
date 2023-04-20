@@ -114,9 +114,11 @@ function showQuestion() {
       const button = document.createElement("button");
       button.innerHTML = answer.text;
       button.classList.add("btn");
+      button.dataset.correct = answer.correct;
+      /* button.type = "hidden" */
       answerButtons.appendChild(button);
       
-      if (answerButtons.correct) { //Bei richtiger Antwort nächste Frage
+      if (button.correct) { //Bei richtiger Antwort nächste Frage
             button.dataset.correct = answer.correct;
       }
       button.addEventListener("click", selectAnswer);
@@ -131,26 +133,25 @@ function resetState(){
     }
 
 }
-function selectAnswer (event) {
-  const selectedBtn = event.target;
-  const isCorrect = selectedBtn.dataset.correct == "true";
-  /* console.log(selectedBtn.dataset["correct"]); */
+function selectAnswer (e) {
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct;
+  console.log(isCorrect); 
   
-  if (isCorrect) {
+  if (isCorrect === "true") {
     selectedBtn.classList.add("correct");
     alert ("Richtige Antwort");
   }else{
     selectedBtn.classList.add("incorrect");
     alert("Falsche Antwort");
-    
     }
-    /* Array.from(answerButtons.children).forEach(button => {
+    Array.from(answerButtons.children).forEach(button => {
       if (button.dataset.correct === "true") {
             button.classList.add("correct");
       }
       button.disabled = true;
     });
-    nextButton.style.display = "block"; */
+    nextButton.style.display = "block";
   }
 
 
