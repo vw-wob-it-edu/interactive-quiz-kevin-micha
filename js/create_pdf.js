@@ -1,34 +1,16 @@
-src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+import { jsPDF } from "jspdf";
 
-var form = document.getElementById('form');
 
-form.addEventListener('submit',function(event) {
-  event.preventDefault();
+function generatepdf() {
+  const surname = document.getElementById("surname").value
+  const name = document.getElementById("name").value
 
-  var surname = document.getElementById('nickname').value
-  var name = document.getElementById('email').value
+  const doc = new jsPDF();
 
-  var doc = new jsPDF()
+  doc.text('surname: ${surname}');
+  doc.text('name: ${name}');
 
-  doc.setFontSize(fontsize)
-
-  doc.text(text,20,20)
-
-  doc.save("output.pdf")
-
-})
-
-const surname = document.getElementById("nickname");
-const name = document.getElementById("email");
-const submit = document.getElementById("submit");
-
-surname.addEventListener("input", checkInputs);
-name.addEventListener("input", checkInputs);
-
-function checkInputs() {
-  if (surname.value.trim() !== "" && name.value.trim() !== "") {
-    submit.disabled = false;
-  } else {
-    submit.disabled = true;
-  }
+  doc.save("Quiz-Ergebniss.pdf");
 }
+
+

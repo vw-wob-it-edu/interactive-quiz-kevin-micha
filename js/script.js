@@ -1,4 +1,4 @@
-const questions = [
+const questions = [ //Fragen erstellen
   {
     question: "Wie viele Sitzplätze hat der ID. 7?",
     answers: [
@@ -77,10 +77,10 @@ const questions = [
   {
     question: "Was findest du am besten beim neuen ID. 7?",
     answers: [
-      { text: "Das neue Elektrochromdach ", correct: false},
-      { text: "700 KM Reichweite mit fast 30min laden ", correct: false},
+      { text: "Das neue Elektrochromdach ", correct: true},
+      { text: "700 KM Reichweite mit fast 30min laden ", correct: true},
       { text: "Das Limousinen Design als Elektro", correct: true},
-      { text: "Die neuen klimatisierten Sitze im ID.7", correct: false}
+      { text: "Die neuen klimatisierten Sitze im ID.7", correct: true}
   
     ]
   },
@@ -88,7 +88,7 @@ const questions = [
 
   ];
 
-  //js anstelle von html ersetzen
+  //Definition der Konstanten
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -97,14 +97,14 @@ const createPDFButton = document.getElementById("create-pdf-btn");
 let currentQuestionIndex = 0;
 let score = 0;
 
-function startQuiz() { //Index auf 0 setzen
+function startQuiz() { //Beim Rundenstart von vorne zählen
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
 
-function showQuestion() {
+function showQuestion() { //Initialisieren der Fragen
   resetState ();
     let currentQuestion = questions [currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
@@ -129,6 +129,7 @@ function showQuestion() {
 
 function resetState(){
     nextButton.style.display = "none";
+    createPDFButton.style.display = "none";
     while(answerButtons.firstChild) {
       answerButtons.removeChild(answerButtons.firstChild);
     }
@@ -140,11 +141,10 @@ function selectAnswer (e) {
   console.log(isCorrect); 
   
   if (isCorrect === "true") {
-    selectedBtn.classList.add("correct");
-    score++; //bei richtiger antwort gebe einen punkt
-   /*  alert ("Richtige Antwort"); */
+    selectedBtn.classList.add("correct"); //correct klasse hinzufügen
+    score++; //bei richtiger antwort Score um 1 erhöhen
   }else{
-    selectedBtn.classList.add("incorrect");
+    selectedBtn.classList.add("incorrect"); //incorrect klasse hinzufügen
     /* alert("Falsche Antwort"); */
     }
     Array.from(answerButtons.children).forEach(button => {
@@ -161,15 +161,15 @@ function selectAnswer (e) {
     questionElement.innerHTML = `Du hast ${score} von ${questions.
     length} Fragen zum ID. 7 richtig beantwortet!`;
     nextButton.innerHTML = "Nochmal versuchen";
-    nextButton.style.display = "block";
+    nextButton.style.display = "block"; //button nur im end-screen anzeigen
     createPDFButton.innerHTML = "Ergebnis als PDF speichern";
-    createPDFButton.style.display = "block";
+    createPDFButton.style.display = "block"; //button nur im end-screen anzeigen
   } 
   
   
   function handleNextButton() {
     currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
+    if (currentQuestionIndex < questions.length) { //überprüfen ob das quiz schon vorbei ist
       showQuestion ();
     } else {
       showScore ();
@@ -178,7 +178,7 @@ function selectAnswer (e) {
   
   nextButton.addEventListener("click", () =>{
     if (currentQuestionIndex < questions.length) {
-      handleNextButton();
+      handleNextButton(); //next button anzeigen, damit er nicht im end-screen erscheint
     } else {
       startQuiz ();
     }

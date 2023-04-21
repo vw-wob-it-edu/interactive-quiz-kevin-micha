@@ -42,29 +42,30 @@
 
       <div class="logreg-box">
         <div class="form-box login">
-          <form id="form">
+          <form id="form" action="quiz.html">
             <h2 class="title_right">Get ready for the ID.7</h2>
 
             <div class="input-box"> <!-- Daten eingeben -->
               <span class="icon"><i class='bx bxs-user-circle' ></i></span>
+              <input type="text" required id="surname">
               <label class="nickname">Surname</label>
-              <input type="text" required id="surname"> <!-- pflichtfeld --> 
               
             </div>
 
             <div class="input-box">
               <span class="icon"><i class='bx bxs-envelope' ></i></span>
+              <input type="text" required id="name">
               <label class="email">Name</label>
-              <input type="text" required id="name"> <!-- pflichtfeld -->
               
             </div>
 
-            <button class="button" type="submit">Quiz starten</button>
+            <button class="button" onclick="generatepdf()" type="submit">Quiz starten</button>
             
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
             <script src="/js/create_pdf.js"></script>
             <script src="/js/input_validierung.js"></script>
             <script src="/js/script.js"></script>
+            
           </form>
         </div>
       </div>
