@@ -158,7 +158,7 @@ function selectAnswer (e) {
    function showScore() {
     resetState();
     questionElement.innerHTML = `Du hast ${score} von ${questions.
-    length} ID. 7 Fragen beantwortet!`;
+    length} Fragen zum ID. 7 richtig beantwortet!`;
     nextButton.innerHTML = "Nochmal versuchen";
     nextButton.style.display = "block";
   } 

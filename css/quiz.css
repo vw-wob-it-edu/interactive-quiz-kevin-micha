@@ -80,7 +80,7 @@ body {
   width: 75%; /* skalierung des bildes */
   height: 550px;
   margin: 20px auto;
-  /* background: url(/bilder/volkswagen-id7-front-right.png) no-repeat; */
+ /*  background: url(/bilder/volkswagen-id7-front-right.png) no-repeat; */
   background-size: cover;
   background-position: center;
   border-radius: 10px;
