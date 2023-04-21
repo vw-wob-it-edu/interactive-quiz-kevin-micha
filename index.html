@@ -42,24 +42,26 @@
 
       <div class="logreg-box">
         <div class="form-box login">
-          <form action="#">
+          <form action="quiz.html">
             <h2 class="title_right">Get ready for the ID.7</h2>
 
             <div class="input-box"> <!-- Daten eingeben -->
               <span class="icon"><i class='bx bxs-user-circle' ></i></span>
-              <input type="text" required> <!-- pflichtfeld --> 
               <label class="nickname">Surname</label>
+              <input type="text" required> <!-- pflichtfeld --> 
+              
             </div>
 
             <div class="input-box">
               <span class="icon"><i class='bx bxs-envelope' ></i></span>
-              <input type="text" required> <!-- pflichtfeld -->
               <label class="email">Name</label>
+              <input type="text" required> <!-- pflichtfeld -->
+              
             </div>
 
-            <button onclick="window.location.href=' ./quiz.html';" class="button" type="submit">Quiz starten</button>
+            <button class="button" type="submit">Quiz starten</button>
 
-
+            <script src="/js/input_validierung.js"></script>
             <script src="/js/script.js"></script>
           </form>
         </div>
