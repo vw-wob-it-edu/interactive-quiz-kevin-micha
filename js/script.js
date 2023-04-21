@@ -92,6 +92,7 @@ const questions = [
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const createPDFButton = document.getElementById("create-pdf-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -161,6 +162,8 @@ function selectAnswer (e) {
     length} Fragen zum ID. 7 richtig beantwortet!`;
     nextButton.innerHTML = "Nochmal versuchen";
     nextButton.style.display = "block";
+    createPDFButton.innerHTML = "Ergebnis als PDF speichern";
+    createPDFButton.style.display = "block";
   } 
   
   
